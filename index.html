@@ -24,24 +24,25 @@
       color: hsl(228, 45%, 44%);
     }
   </style>
+  <script src="main.js" defer></script>
 </head>
 
 <body>
 
   <header>
+    <img class="logo" src="images/logo.svg" alt="">
     <nav>
-      <img class="logo" src="images/logo.svg" alt="">
 
-      <ul>
-        <li><a href="#">Features</a></li>
-        <li><a href="#">Company</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">About</a></li>
-        <li class="login-btn"><a href="#">Login</a></li>
-        <li class="register-btn"><a href="#">Register</a></li>
+      <ul id="navigation"  aria-visible="false">
+        <li class="nav-item"><a href="#">Features<span class="icon"></span></a></li>
+        <li class="nav-item"><a href="#">Company</a></li>
+        <li class="nav-item"><a href="#">Careers</a></li>
+        <li class="nav-item"><a href="#">About</a></li>
+        <li class="nav-item login-btn"><a href="#">Login</a></li>
+        <li class="nav-item register-btn"><a href="#">Register</a></li>
       </ul>
-      <button class="nav-toggle" aria-controls="navigation"></button>
     </nav>
+    <button class="toggle-nav" aria-controls="navigation" aria-expanded="false"></button>
   </header>
 
   <main>
@@ -66,7 +67,7 @@
 
 
       <picture>
-        <source media="(min-width: 35rem)" srcset="/images/image-hero-desktop.png">
+        <source media="(min-width: 55rem)" srcset="/images/image-hero-desktop.png">
         <img src="/images/image-hero-mobile.png" alt="a man working on laptop">
       </picture>
 

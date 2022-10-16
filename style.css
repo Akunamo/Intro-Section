@@ -33,36 +33,57 @@ img {
     display: block;
 }
 
-button {font: inherit;}
+button {
+    font: inherit;
+}
 
 /* ------------------------------------ */
 /* ------------ Navigation  ------------*/
 /* ------------------------------------ */
 
-nav {
+header {
+    position: relative;
     display: flex;
     align-items: center;
     padding: 2rem 3.5rem;
 }
 
-a {
-    text-decoration: none;
-    color: var(--Almost-Black);
-}
-
-ul {
-    display: flex;
+nav {
     flex-grow: 1;
 }
-
-li {padding: .8em 1.4em;}
-
 
 .logo {
     margin-right: 2.3rem;
 }
 
-.login-btn {margin-left: auto;}
+#navigation {
+    display: flex;
+    flex-grow: 1;
+}
+
+.nav-item {
+    padding: .8em 1.4em;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: var(--Almost-Black);
+}
+
+.icon {
+    display: inline-block;
+    width: .5rem;
+    margin-left: .2em;
+    aspect-ratio: 1;
+    /* background-color: red; */
+    background-image: url(images/icon-arrow-down.svg);
+    background-repeat: no-repeat;
+    background-position:  center;
+}
+
+.login-btn {
+    margin-left: auto;
+}
 
 .register-btn {
     border: 1px solid var(--Medium-Gray);
@@ -70,20 +91,50 @@ li {padding: .8em 1.4em;}
     margin-left: 2.5rem;
 }
 
-@media (max-width:50rem) {
-    nav {position: relative;}
+.toggle-nav {
+    display: none;
+}
 
-    ul {
+
+@media (max-width:65rem) {
+    #navigation {
         position: fixed;
         inset: 0 0 0 35%;
         flex-direction: column;
         background-color: #fff;
-        padding:1rem;
-        padding-top: 4rem;
+        padding: 1rem;
+        padding-top: max(4rem, 15vh);
+        translate: 100% 0;
+        transition: 300ms ease-in;
     }
-    .login-btn,.register-btn {
+
+    #navigation[aria-visible="true"] {
+        translate: 0;
+    }
+
+    .login-btn,
+    .register-btn {
         margin: .5rem 0;
         text-align: center;
+    }
+
+    .toggle-nav {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        z-index: 10000;
+
+        display: block;
+        background-color: transparent;
+        background-image: url(/images/icon-menu.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 1rem;
+        aspect-ratio: 1;
+    }
+
+    .toggle-nav[aria-expanded="true"] {
+        background-image: url(/images/icon-close-menu.svg);
     }
 }
 
@@ -94,11 +145,12 @@ li {padding: .8em 1.4em;}
 
 main {
     display: grid;
-    grid-template-rows: 
-    'img',
-    'txt';
+    grid-template-rows:
+        'img',
+        'txt';
     text-align: center;
     row-gap: 3rem;
+    margin-bottom: 4rem;
 }
 
 .text-wrapper {
@@ -107,7 +159,7 @@ main {
 }
 
 /* .text-wrapper :not(:first-child) */
-.text-wrapper > * + * {
+.text-wrapper>*+* {
     margin-top: 3rem;
 }
 
@@ -115,36 +167,47 @@ main {
     grid-column: img;
 }
 
-
-@media (min-width:35rem) {
-    main {
-        text-align: left;
-        display: grid;
-        padding-block: 1.6rem;
-        grid-template-columns: minmax(1rem, 1fr)  minmax(38%,550px) minmax(25%, 500px) minmax(1rem, 1fr);
-        grid-template-areas: 
-        " ... txt img ...";
-        gap: 4rem;
-    }
-}
-
-.flex-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-
 h1 {
-    font-size: clamp(2rem, 5vw + 1rem, 5rem);
-    max-width: 530px;
+    font-size: clamp(2rem, 6vw + 1rem, 5rem);
     margin-top: clamp(0rem, 4vw, 5rem);
 }
 
 .discription {
-    max-width: 400px;
     line-height: 1.6;
 }
+
+@media (min-width: 35rem) {
+    .image-wrapper img {
+        /* max-width: 60%; */
+        margin-inline: auto;
+    }
+}
+
+@media (min-width: 55rem) {
+    main {
+        text-align: left;
+        display: grid;
+        padding-block: 1.6rem;
+        grid-template-columns: minmax(1rem, 1fr) minmax(auto, 580px) minmax(20%, 480px) minmax(1rem, 1fr);
+        grid-template-areas:
+            " ... txt img ...";
+        gap: 4rem;
+    }
+
+    h1 {
+        max-width: 540px;
+    }
+
+    .discription {
+        max-width: 400px;
+    }
+
+    .image-wrapper {
+        display: flex;
+        align-items: center;
+    }
+}
+
 
 button {
     padding: 1rem 1.6rem;
@@ -162,7 +225,6 @@ button {
 
 footer {
     position: absolute;
-    bottom: 0;
     left: 50%;
-    translate: -50% ;
+    translate: -50%;
 }

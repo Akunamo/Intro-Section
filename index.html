@@ -30,12 +30,22 @@
 <body>
 
   <header>
-    <img class="logo" src="images/logo.svg" alt="">
+    <div>
+      <img class="logo" src="images/logo.svg" alt="">
+    </div>
     <nav>
 
-      <ul id="navigation"  aria-visible="false">
-        <li class="nav-item"><a href="#">Features<span class="icon"></span></a></li>
-        <li class="nav-item"><a href="#">Company</a></li>
+      <ul id="navigation">
+        <li class="nav-item" aria-expanded="false" data-dropdown>
+          <button  data-dropdown-button>Features<span class="icon icon-arrow"></span></button>
+          <ul class="dropdown" aria-visible="false">
+            <li><a href="#"><span class="icon icon-todo"></span><span>List</span></a></li>
+            <li><a href="#"><span class="icon icon-calander"></span><span>Calander</span></a></li>
+            <li><a href="#"><span class="icon icon-reminder"></span><span>Reminder</span></a></li>
+            <li><a href="#"><span class="icon icon-planning"></span><span>Planning</span></a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><button>Company</button></li>
         <li class="nav-item"><a href="#">Careers</a></li>
         <li class="nav-item"><a href="#">About</a></li>
         <li class="nav-item login-btn"><a href="#">Login</a></li>

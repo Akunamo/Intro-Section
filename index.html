@@ -37,15 +37,22 @@
 
       <ul id="navigation">
         <li class="nav-item" aria-expanded="false" data-dropdown>
-          <button  data-dropdown-button>Features<span class="icon icon-arrow"></span></button>
-          <ul class="dropdown" aria-visible="false">
-            <li><a href="#"><span class="icon icon-todo"></span><span>List</span></a></li>
+          <button data-dropdown-button>Features<span class="icon icon-arrow"></span></button>
+          <ul class="dropdown dropdown--feature flow" aria-visible="false" style="--gap:.2em">
+            <li><a href="#"><span class="icon icon-todo"></span><span>Todo List</span></a></li>
             <li><a href="#"><span class="icon icon-calander"></span><span>Calander</span></a></li>
-            <li><a href="#"><span class="icon icon-reminder"></span><span>Reminder</span></a></li>
+            <li><a href="#"><span class="icon icon-reminder"></span><span>Reminders</span></a></li>
             <li><a href="#"><span class="icon icon-planning"></span><span>Planning</span></a></li>
           </ul>
         </li>
-        <li class="nav-item"><button>Company</button></li>
+        <li class="nav-item" aria-expanded="false" data-dropdown>
+          <button data-dropdown-button>Company<span class="icon icon-arrow"></span></button>
+          <ul class="dropdown dropdown--company flow" aria-visible="false">
+            <li><a href="#">History</a></li>
+            <li><a href="#">Our Team</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </li>
         <li class="nav-item"><a href="#">Careers</a></li>
         <li class="nav-item"><a href="#">About</a></li>
         <li class="nav-item login-btn"><a href="#">Login</a></li>

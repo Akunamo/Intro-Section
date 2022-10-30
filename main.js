@@ -4,7 +4,6 @@ const nav = document.querySelector("#navigation");
 toggleBtn.addEventListener("click", toggleNav);
 
 const allDropdown = document.querySelectorAll("[data-dropdown");
-console.log(allDropdown);
 
 function toggleNav(e) {
   let expand = e.target.getAttribute("aria-expanded");
@@ -18,7 +17,6 @@ function toggleNav(e) {
     nav.setAttribute("aria-visible", false);
     e.target.setAttribute("aria-expanded", false);
   }
-  console.log(this.getAttribute("aria-expanded"));
 }
 
 document.addEventListener('click', toggleDropDown);
@@ -38,7 +36,6 @@ function toggleDropDown(e) {
     let toggle = currentDropdown.getAttribute("aria-expanded") === "false" ? true : false;
     dropdownMenu.setAttribute("aria-visible", toggle);
     currentDropdown.setAttribute("aria-expanded", toggle)
-    console.log(currentDropdown);
   }
 
   const dm = document.querySelectorAll("[data-dropdown]").forEach(dd =>{

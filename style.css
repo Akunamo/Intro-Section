@@ -132,6 +132,7 @@ nav {
     pointer-events: none;
     padding: 1rem;
     border-radius: .4em;
+    min-width:104px;
     box-shadow: 0 0 30px 2px hsl(var(--Medium-Gray) / .2);
     transition: 150ms ease-in;
     translate: 0 -20%;
@@ -140,10 +141,6 @@ nav {
 
 .dropdown--feature {
     right: 1em;
-}
-
-.dropdown:not(.dropdown--feature) {
-    min-width:76px;
 }
 
 .dropdown[aria-visible="true"] {

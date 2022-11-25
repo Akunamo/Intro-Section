@@ -142,6 +142,10 @@ nav {
     right: 1em;
 }
 
+.dropdown:not(.dropdown--feature) {
+    min-width:76px;
+}
+
 .dropdown[aria-visible="true"] {
     translate: 0;
     pointer-events: unset;
